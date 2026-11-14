@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="tr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>KrediOdak - Derin Odak ve Zaman Yönetimi</title><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "ink-primary": "#2E2E38", "ink-secondary": "#6B6B76", "surface-container-highest": "#e4e2df", "surface-container-high": "#e9e8e4", "ink-tertiary": "#9898A4", "on-background": "#1b1c1a", "on-secondary-fixed-variant": "#1f4f43", "primary-container": "#4356a7", "canvas-base": "#FAF8F5", "tertiary-fixed": "#ffe08d", "surface-dim": "#dbdad6", "success-text": "#25593A", "accent-ink": "#2F3A6B", "surface-container": "#efeeea", "background": "#fbf9f5", "error-container": "#ffdad6", "tertiary-fixed-dim": "#e5c366", "inverse-surface": "#30312e", "primary-fixed-dim": "#b8c3ff", "on-secondary": "#ffffff", "border-subtle": "#E8E4DE", "accent-hover": "#CBD5F5", "primary": "#2a3e8e", "vault-surface": "#E3F1EC", "surface-container-low": "#f5f3f0", "outline-variant": "#c5c5d3", "on-primary-container": "#cbd2ff", "on-error": "#ffffff", "secondary-container": "#b8eada", "on-secondary-container": "#3c6b5e", "vault-ink": "#1F4A40", "inverse-on-surface": "#f2f1ed", "accent-rest": "#DDE3FA", "outline": "#757682", "tertiary-container": "#c7a84e", "secondary-fixed-dim": "#9fd1c1", "error-text": "#8A2F2F", "surface-elevation": "#FFFFFF", "on-error-container": "#93000a", "vault-outline": "#9CCDBD", "accent-focus": "#6F82D6", "on-primary": "#ffffff", "on-surface": "#1b1c1a", "on-tertiary-fixed": "#241a00", "secondary": "#38675a", "on-secondary-fixed": "#002019", "surface-container-lowest": "#ffffff", "surface": "#fbf9f5", "primary-fixed": "#dde1ff", "error": "#ba1a1a", "on-surface-variant": "#454651", "warning-surface": "#FBEFD5", "on-tertiary-fixed-variant": "#584400", "on-tertiary": "#ffffff", "on-primary-fixed": "#001355", "inverse-primary": "#b8c3ff", "success-surface": "#DDF0E3", "tertiary": "#745b00", "surface-variant": "#e4e2df", "error-surface": "#F8E1E1", "surface-tint": "#4659aa", "warning-text": "#6B4A10", "secondary-fixed": "#bbeddc", "on-primary-fixed-variant": "#2c4090", "on-tertiary-container": "#4f3d00", "vault-base": "#F1F8F5", "surface-bright": "#fbf9f5" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-md": "1rem", "space-xs": "0.25rem", "margin": "1.5rem", "gutter": "1.25rem", "space-lg": "1.5rem", "space-xl": "2.25rem", "space-sm": "0.5rem" }, "fontFamily": { "headline-md": ["Inter"], "display-mobile": ["Inter"], "display": ["Inter"], "body-lg": ["Inter"], "code": ["JetBrains Mono"], "headline-lg": ["Inter"], "headline-sm": ["Inter"], "label-md": ["Inter"], "body-md": ["Inter"], "label-sm": ["Inter"] }, "fontSize": { "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "500" }], "display-mobile": ["26px", { "lineHeight": "34px", "fontWeight": "600" }], "display": ["32px", { "lineHeight": "40px", "fontWeight": "600" }], "body-lg": ["15px", { "lineHeight": "24px", "fontWeight": "400" }], "code": ["13px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-lg": ["24px", { "lineHeight": "32px", "fontWeight": "600" }], "headline-sm": ["17px", { "lineHeight": "24px", "fontWeight": "500" }], "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "body-md": ["13px", { "lineHeight": "20px", "fontWeight": "400" }], "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }] } } } };</script></head><body class="min-h-full bg-canvas-base text-ink-primary font-body-md text-body-md flex flex-col antialiased selection:bg-accent-rest selection:text-accent-ink"><header class="fixed top-0 inset-x-0 z-50 bg-canvas-base border-b border-border-subtle"><div class="h-16 max-w-7xl mx-auto px-margin flex items-center justify-between gap-gutter"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-sm"><span class="font-headline-sm text-headline-sm text-ink-primary font-semibold tracking-tight">KrediOdak</span><span class="px-1.5 py-0.5 rounded border border-border-subtle bg-surface-container-low font-code text-[11px] leading-none text-ink-secondary tracking-normal">v2.5 // FSM</span></div><nav class="hidden md:flex items-center gap-space-xs" data-active-classes="bg-accent-rest text-accent-ink font-semibold rounded-lg"><a aria-current="page" class="px-3 py-1.5 transition-colors bg-accent-rest text-accent-ink font-semibold rounded-lg" data-path="kontrol-paneli" href="#">Kontrol Paneli</a><a class="px-3 py-1.5 rounded-lg text-ink-secondary hover:text-ink-primary hover:bg-surface-container-low transition-colors font-label-md text-label-md" data-path="kurulum" href="#">Kurulum</a><a class="px-3 py-1.5 rounded-lg text-ink-secondary hover:text-ink-primary hover:bg-surface-container-low transition-colors font-label-md text-label-md" data-path="aktif-zamanlayici" href="#">Aktif Zamanlayıcı</a><a class="px-3 py-1.5 rounded-lg text-ink-secondary hover:text-ink-primary hover:bg-surface-container-low transition-colors font-label-md text-label-md" data-path="birlikte-calisma" href="#">Birlikte Çalışma</a></nav></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm px-2.5 py-1.5 rounded-lg border border-border-subtle bg-surface-elevation"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span></span><span class="font-code text-code text-ink-primary font-medium tracking-tight">@dev_caglar</span><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="flex-1 w-full pt-16 bg-canvas-base"><div class="flex flex-col w-full">
+<div class="max-w-4xl mx-auto w-full px-margin py-space-xl flex flex-col gap-space-xl">
+<!-- Quiet Tab Navigation (Distraction-free) -->
+<div class="w-full flex justify-center">
+<div class="inline-flex p-1 bg-surface-container-low rounded-xl gap-1">
+<button class="tab-button px-4 py-2 rounded-lg font-label-md text-label-md transition-all text-accent-ink bg-accent-rest font-medium shadow-sm" id="tab-btn-dashboard" onclick="switchTab('dashboard')">
+          Kontrol Paneli
+        </button>
+<button class="tab-button px-4 py-2 rounded-lg font-label-md text-label-md transition-all text-ink-secondary hover:text-ink-primary hover:bg-surface-elevation" id="tab-btn-setup" onclick="switchTab('setup')">
+          Kurulum
+        </button>
+<button class="tab-button px-4 py-2 rounded-lg font-label-md text-label-md transition-all text-ink-secondary hover:text-ink-primary hover:bg-surface-elevation" id="tab-btn-active-timer" onclick="switchTab('active-timer')">
+          Aktif Zamanlayıcı
+        </button>
+<button class="tab-button px-4 py-2 rounded-lg font-label-md text-label-md transition-all text-ink-secondary hover:text-ink-primary hover:bg-surface-elevation" id="tab-btn-coworking" onclick="switchTab('coworking')">
+          Birlikte Çalışma
+        </button>
+</div>
+</div>
+<!-- 1. KONTROL PANELİ TAB -->
+<section class="tab-panel flex flex-col gap-space-lg w-full" id="panel-dashboard">
+<!-- Quiet Header -->
+<div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-space-sm pb-space-sm">
+<div>
+<span class="font-code text-label-sm uppercase tracking-wider text-ink-tertiary">Günlük Kayıt Defteri</span>
+<h1 class="font-headline-lg text-headline-lg text-ink-primary tracking-tight mt-1">Hoş geldin, Çağlar.</h1>
+</div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container text-ink-secondary font-code text-label-sm">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>Bilişsel Yük: Düşük</span>
+</div>
+</div>
+<!-- 3 Metrics in a Row -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="bg-surface-elevation p-space-lg rounded-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-ink-tertiary">
+<span class="font-label-md text-label-md">Bugün</span>
+<span class="material-symbols-outlined text-[18px]">timelapse</span>
+</div>
+<div class="my-space-sm">
+<span class="font-code text-display text-ink-primary">120 <span class="font-label-md text-ink-secondary">Dk</span></span>
+</div>
+<p class="font-body-md text-body-md text-ink-secondary">4 tamamlanan seans</p>
+</div>
+<div class="bg-surface-elevation p-space-lg rounded-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-ink-tertiary">
+<span class="font-label-md text-label-md">Bu Hafta</span>
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+</div>
+<div class="my-space-sm">
+<span class="font-code text-display text-ink-primary">450 <span class="font-label-md text-ink-secondary">Dk</span></span>
+</div>
+<div class="flex items-center justify-between text-ink-secondary font-label-sm text-label-sm">
+<span>Hedef 600 Dk</span>
+<span class="font-code text-accent-ink">%75</span>
+</div>
+</div>
+<div class="bg-surface-elevation p-space-lg rounded-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-ink-tertiary">
+<span class="font-label-md text-label-md">Seri</span>
+<span class="material-symbols-outlined text-[18px]">local_fire_department</span>
+</div>
+<div class="my-space-sm">
+<span class="font-code text-display text-ink-primary">5 <span class="font-label-md text-ink-secondary">Gün</span></span>
+</div>
+<p class="font-body-md text-body-md text-ink-secondary">Kesintisiz akış</p>
+</div>
+</div>
+<!-- Quick Action Card -->
+<div class="bg-surface-elevation p-space-lg rounded-lg shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">hourglass_top</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-ink-primary">Standart Blok Seansı</h3>
+<p class="font-body-md text-body-md text-ink-secondary">Derin çalışma için ideal 45 dakikalık konsantrasyon aralığı.</p>
+</div>
+</div>
+<button class="px-5 py-2.5 bg-accent-rest hover:bg-accent-hover text-accent-ink font-label-md text-label-md rounded-[6px] transition-colors flex items-center gap-2 whitespace-nowrap" onclick="quickStart(45)">
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+          45 Dk Başlat
+        </button>
+</div>
+<!-- Recent Focus Records -->
+<div class="bg-surface-elevation rounded-lg shadow-sm p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm text-ink-primary">Son Odak Kayıtları</h2>
+<span class="font-code text-[11px] text-ink-tertiary">GÜNCEL ARŞİV</span>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between p-3 rounded-lg bg-canvas-base hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-3">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<div>
+<p class="font-label-md text-label-md text-ink-primary">KrediOdak UI Refactoring</p>
+<p class="font-label-sm text-label-sm text-ink-secondary">Bilişsel Kodlama • Tamamlandı</p>
+</div>
+</div>
+<div class="text-right">
+<span class="font-code text-label-md text-ink-primary">45 Dk</span>
+<p class="font-label-sm text-label-sm text-ink-tertiary">14:20</p>
+</div>
+</div>
+<div class="flex items-center justify-between p-3 rounded-lg bg-canvas-base hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-3">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<div>
+<p class="font-label-md text-label-md text-ink-primary">Mimari İnceleme & SQLite Veri Akışı</p>
+<p class="font-label-sm text-label-sm text-ink-secondary">Sistem Tasarımı • Tamamlandı</p>
+</div>
+</div>
+<div class="text-right">
+<span class="font-code text-label-md text-ink-primary">50 Dk</span>
+<p class="font-label-sm text-label-sm text-ink-tertiary">11:00</p>
+</div>
+</div>
+<div class="flex items-center justify-between p-3 rounded-lg bg-canvas-base hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-3">
+<span class="w-2 h-2 rounded-full bg-ink-tertiary"></span>
+<div>
+<p class="font-label-md text-label-md text-ink-primary">E-Posta Triyajı ve Not Sentezi</p>
+<p class="font-label-sm text-label-sm text-ink-secondary">Yönetim • Kısmi Seans</p>
+</div>
+</div>
+<div class="text-right">
+<span class="font-code text-label-md text-ink-primary">25 Dk</span>
+<p class="font-label-sm text-label-sm text-ink-tertiary">09:30</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. KURULUM TAB -->
+<section class="tab-panel hidden flex flex-col items-center w-full" id="panel-setup">
+<div class="w-full max-w-xl bg-surface-elevation p-space-xl rounded-lg shadow-sm flex flex-col gap-space-xl">
+<div class="text-center flex flex-col gap-1">
+<span class="font-code text-label-sm uppercase tracking-widest text-ink-tertiary">Blok Süresi Belirle</span>
+<h2 class="font-headline-lg text-headline-lg text-ink-primary">Zamanlama Ayarı</h2>
+<p class="font-body-md text-body-md text-ink-secondary">Zihninizin bölünmeden akışta kalacağı periyodu seçin.</p>
+</div>
+<!-- Big Display -->
+<div class="text-center py-4 bg-canvas-base rounded-xl">
+<div class="font-code text-display text-ink-primary tracking-tight font-semibold" id="duration-display">
+            45 DAKİKA
+          </div>
+<span class="font-label-sm text-label-sm text-ink-tertiary mt-1 inline-block">1 Kredi Değeri • Kesintisiz Seans</span>
+</div>
+<!-- Range Slider -->
+<div class="flex flex-col gap-2">
+<input class="w-full h-2 bg-surface-container-high rounded-lg appearance-none cursor-pointer accent-accent-focus" id="duration-slider" max="180" min="15" oninput="updateDuration(this.value)" step="5" type="range" value="45"/>
+<div class="flex justify-between font-code text-label-sm text-ink-tertiary px-1">
+<span>15 dk</span>
+<span>60 dk</span>
+<span>120 dk</span>
+<span>180 dk</span>
+</div>
+</div>
+<!-- Quick Duration Buttons (4px radius) -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-md text-label-md text-ink-secondary">Hızlı Seçimler</label>
+<div class="grid grid-cols-5 gap-2">
+<button class="quick-btn py-2 text-center font-code text-code bg-surface-container-low hover:bg-surface-container text-ink-primary rounded-[4px] transition-colors" onclick="setDuration(15)">15</button>
+<button class="quick-btn py-2 text-center font-code text-code bg-surface-container-low hover:bg-surface-container text-ink-primary rounded-[4px] transition-colors" onclick="setDuration(25)">25</button>
+<button class="quick-btn py-2 text-center font-code text-code bg-accent-rest text-accent-ink font-medium rounded-[4px] transition-colors" onclick="setDuration(45)">45</button>
+<button class="quick-btn py-2 text-center font-code text-code bg-surface-container-low hover:bg-surface-container text-ink-primary rounded-[4px] transition-colors" onclick="setDuration(60)">60</button>
+<button class="quick-btn py-2 text-center font-code text-code bg-surface-container-low hover:bg-surface-container text-ink-primary rounded-[4px] transition-colors" onclick="setDuration(90)">90</button>
+</div>
+</div>
+<!-- Setup Meta Options -->
+<div class="flex items-center justify-between p-3 bg-canvas-base rounded-lg text-ink-secondary font-label-md text-label-md">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">notifications_paused</span>
+            Derin Sessizlik Modu
+          </span>
+<span class="font-code text-label-sm text-success-text bg-success-surface px-2 py-0.5 rounded-[4px]">Aktif</span>
+</div>
+<!-- Start Primary Action -->
+<button class="w-full py-3.5 bg-accent-rest hover:bg-accent-hover text-accent-ink font-headline-sm text-headline-sm rounded-[6px] transition-all flex items-center justify-center gap-2 shadow-sm" onclick="startSession()">
+<span class="material-symbols-outlined text-[20px]">timer</span>
+          Odaklanmaya Başla
+        </button>
+</div>
+</section>
+<!-- 3. AKTİF ZAMANLAYICI & DURUM MAKİNESİ TAB -->
+<section class="tab-panel hidden flex flex-col items-center w-full" id="panel-active-timer">
+<!-- State Machine Switch Toggle -->
+<div class="mb-space-lg flex items-center gap-2 p-1 bg-surface-container-low rounded-full">
+<button class="px-4 py-1.5 rounded-full font-label-md text-label-md transition-all bg-surface-elevation text-ink-primary shadow-sm font-medium" id="btn-state-focus" onclick="setTimerState('focus')">
+          Odak Fazı
+        </button>
+<button class="px-4 py-1.5 rounded-full font-label-md text-label-md transition-all text-ink-secondary hover:text-ink-primary" id="btn-state-break" onclick="setTimerState('break')">
+          Mola Fazı
+        </button>
+</div>
+<!-- STATE A: FOCUS STATE -->
+<div class="w-full max-w-xl bg-surface-elevation p-space-xl rounded-lg shadow-sm flex flex-col items-center justify-center text-center gap-space-lg transition-all" id="state-focus-card">
+<div class="flex flex-col items-center gap-1">
+<span class="font-code text-label-sm uppercase tracking-widest text-ink-tertiary">FAZ 1 // DERİN BLOK</span>
+<p class="font-body-md text-body-md text-ink-secondary">Bildirimler bastırıldı. Zihnini tek bir amaca kitle.</p>
+</div>
+<!-- Circular Border Progress with Large JetBrains Mono Typography -->
+<div class="relative w-64 h-64 flex items-center justify-center my-2">
+<!-- Minimal SVG ring (under 2KB) -->
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<circle cx="50" cy="50" fill="transparent" r="44" stroke="#efeeea" stroke-width="3"></circle>
+<circle class="transition-all duration-1000" cx="50" cy="50" fill="transparent" r="44" stroke="#4356a7" stroke-dasharray="276.46" stroke-dashoffset="52" stroke-linecap="round" stroke-width="3"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-code text-[42px] leading-none text-ink-primary tracking-tighter font-semibold" id="countdown-text">38:42</span>
+<span class="font-code text-[11px] text-ink-tertiary uppercase mt-2 tracking-wider">Kalan Süre</span>
+</div>
+</div>
+<div class="flex items-center gap-4 w-full justify-center">
+<button class="px-5 py-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-ink-primary font-label-md text-label-md transition-colors flex items-center gap-2" id="pause-btn" onclick="togglePauseTimer()">
+<span class="material-symbols-outlined text-[18px]">pause</span>
+<span id="pause-text">Duraklat</span>
+</button>
+<button class="px-5 py-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-ink-primary font-label-md text-label-md transition-colors flex items-center gap-2" onclick="triggerBreakTransition()">
+<span class="material-symbols-outlined text-[18px]">skip_next</span>
+            Fazı Bitir
+          </button>
+</div>
+<!-- Soft subtle early exit link -->
+<button class="font-label-sm text-label-sm text-ink-tertiary hover:text-error-text transition-colors mt-2" onclick="earlyExit()">
+          Erken Sonlandır (Kredi İptali)
+        </button>
+</div>
+<!-- STATE B: BREAK & DECISION STATE (Sage Green Theme) -->
+<div class="hidden w-full max-w-xl bg-vault-base p-space-xl rounded-lg shadow-sm flex flex-col items-center justify-center text-center gap-space-lg transition-all" id="state-break-card">
+<div class="flex flex-col items-center gap-1">
+<div class="w-12 h-12 rounded-full bg-vault-surface flex items-center justify-center text-vault-ink mb-1">
+<span class="material-symbols-outlined text-[24px]">self_improvement</span>
+</div>
+<span class="font-code text-label-sm uppercase tracking-widest text-vault-ink">Seans Tamamlandı</span>
+<h2 class="font-headline-lg text-headline-lg text-vault-ink tracking-tight font-semibold">Mola Zamanı!</h2>
+<p class="font-body-md text-body-md text-vault-ink max-w-sm">45 dakikalık derin odak tamamlandı. Şimdi gözlerini dinlendir ve kararını ver.</p>
+</div>
+<div class="p-4 rounded-lg bg-vault-surface w-full max-w-sm flex items-center justify-between text-vault-ink font-code text-label-md">
+<span>Kazanılan Kredi:</span>
+<span class="font-semibold">+1.0 Kredi (45 Dk)</span>
+</div>
+<!-- Action Decision Buttons -->
+<div class="flex flex-col sm:flex-row items-center gap-3 w-full max-w-sm">
+<button class="w-full sm:flex-1 py-3 px-4 bg-vault-outline hover:bg-secondary-fixed-dim text-vault-ink font-label-md text-label-md font-semibold rounded-lg transition-colors flex items-center justify-center gap-1.5 shadow-sm" onclick="continueCycle()">
+<span class="material-symbols-outlined text-[18px]">replay</span>
+            Devam Et (Turu Katla)
+          </button>
+<button class="w-full sm:flex-1 py-3 px-4 bg-surface-elevation hover:bg-canvas-base text-vault-ink font-label-md text-label-md font-semibold rounded-lg transition-colors flex items-center justify-center gap-1.5 shadow-sm" onclick="finishAndClaim()">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+            Bitir ve Krediyi Al
+          </button>
+</div>
+</div>
+</section>
+<!-- 4. BİRLİKTE ÇALIŞMA ODASI TAB -->
+<section class="tab-panel hidden flex flex-col gap-space-lg w-full" id="panel-coworking">
+<!-- Room Header & Code input -->
+<div class="bg-surface-elevation p-space-lg rounded-lg shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">groups</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm text-ink-primary font-semibold">#dev-deep-work</h2>
+<span class="font-code text-[11px] px-2 py-0.5 rounded-[4px] bg-secondary-container text-on-secondary-container">Aktif Oda</span>
+</div>
+<p class="font-body-md text-body-md text-ink-secondary">Sessiz senkronize çalışma salonu.</p>
+</div>
+</div>
+<div class="flex items-center gap-2 bg-canvas-base p-1.5 rounded-lg">
+<span class="font-code text-label-sm text-ink-tertiary px-2">ODA KODU:</span>
+<span class="font-code text-label-md text-ink-primary font-semibold px-2">X7Y9Z</span>
+<button class="p-1 text-ink-secondary hover:text-ink-primary transition-colors" id="copy-btn" onclick="copyRoomCode('X7Y9Z')" title="Kodu Kopyala">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+</div>
+</div>
+<!-- Leaderboard / Presence Table -->
+<div class="bg-surface-elevation rounded-lg shadow-sm overflow-hidden flex flex-col">
+<div class="p-space-md bg-canvas-base flex items-center justify-between font-label-sm text-label-sm text-ink-secondary">
+<span>Odadaki Odaklanıcılar (4 Aktif)</span>
+<span class="font-code text-[11px]">SENK: 12ms</span>
+</div>
+<div class="flex flex-col">
+<!-- Row 1: Çağlar (Current User - Periwinkle Accent Highlight) -->
+<div class="flex items-center justify-between px-space-lg py-3.5 bg-accent-rest text-accent-ink transition-colors">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-7 h-7 rounded-full bg-primary flex items-center justify-center text-on-primary font-code text-[11px] font-semibold">
+                Ç
+              </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-semibold truncate">Çağlar (Sen)</span>
+<span class="px-1.5 py-0.2 rounded-[4px] bg-primary text-on-primary font-code text-[10px] leading-tight">SEN</span>
+</div>
+<span class="font-label-sm text-[11px] text-accent-ink/80 truncate">Blok 2/3 • Akış Modu</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md">
+<span class="px-2 py-0.5 rounded-[4px] bg-white/70 font-code text-label-sm text-accent-ink font-medium">
+                Odakta (38 Dk Kaldı)
+              </span>
+<span class="font-code text-label-md font-semibold min-w-[70px] text-right">120 Dk</span>
+</div>
+</div>
+<!-- Row 2: Selin -->
+<div class="flex items-center justify-between px-space-lg py-3.5 hover:bg-canvas-base transition-colors">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-7 h-7 rounded-full bg-surface-container-high flex items-center justify-center text-ink-primary font-code text-[11px]">
+                S
+              </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-ink-primary font-medium truncate">Selin Kara</span>
+<span class="font-label-sm text-[11px] text-ink-tertiary truncate">Veri Tabanı İndeksleme</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md">
+<span class="px-2 py-0.5 rounded-[4px] bg-success-surface font-code text-label-sm text-success-text">
+                Odakta
+              </span>
+<span class="font-code text-label-md text-ink-primary min-w-[70px] text-right">180 Dk</span>
+</div>
+</div>
+<!-- Row 3: Mert -->
+<div class="flex items-center justify-between px-space-lg py-3.5 hover:bg-canvas-base transition-colors">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-7 h-7 rounded-full bg-surface-container-high flex items-center justify-center text-ink-primary font-code text-[11px]">
+                M
+              </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-ink-primary font-medium truncate">Mert Demir</span>
+<span class="font-label-sm text-[11px] text-ink-tertiary truncate">API Dokümantasyonu</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md">
+<span class="px-2 py-0.5 rounded-[4px] bg-vault-surface font-code text-label-sm text-vault-ink">
+                Molada (2 Dk)
+              </span>
+<span class="font-code text-label-md text-ink-primary min-w-[70px] text-right">90 Dk</span>
+</div>
+</div>
+<!-- Row 4: Aylin -->
+<div class="flex items-center justify-between px-space-lg py-3.5 hover:bg-canvas-base transition-colors">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-7 h-7 rounded-full bg-surface-container-high flex items-center justify-center text-ink-primary font-code text-[11px]">
+                A
+              </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-ink-primary font-medium truncate">Aylin Yılmaz</span>
+<span class="font-label-sm text-[11px] text-ink-tertiary truncate">Figma UI Dizayn</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md">
+<span class="px-2 py-0.5 rounded-[4px] bg-success-surface font-code text-label-sm text-success-text">
+                Odakta
+              </span>
+<span class="font-code text-label-md text-ink-primary min-w-[70px] text-right">75 Dk</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<script>
+  // Tab Management
+  function switchTab(tabId) {
+    const panels = document.querySelectorAll('.tab-panel');
+    panels.forEach(p => p.classList.add('hidden'));
+
+    const buttons = document.querySelectorAll('.tab-button');
+    buttons.forEach(btn => {
+      btn.className = "tab-button px-4 py-2 rounded-lg font-label-md text-label-md transition-all text-ink-secondary hover:text-ink-primary hover:bg-surface-elevation";
+    });
+
+    const activePanel = document.getElementById('panel-' + tabId);
+    if (activePanel) {
+      activePanel.classList.remove('hidden');
+    }
+
+    const activeBtn = document.getElementById('tab-btn-' + tabId);
+    if (activeBtn) {
+      activeBtn.className = "tab-button px-4 py-2 rounded-lg font-label-md text-label-md transition-all text-accent-ink bg-accent-rest font-medium shadow-sm";
+    }
+  }
+
+  // Setup tab logic
+  let selectedDuration = 45;
+  function updateDuration(val) {
+    selectedDuration = parseInt(val, 10);
+    document.getElementById('duration-display').innerText = selectedDuration + " DAKİKA";
+    document.querySelectorAll('.quick-btn').forEach(btn => {
+      if (parseInt(btn.innerText, 10) === selectedDuration) {
+        btn.className = "quick-btn py-2 text-center font-code text-code bg-accent-rest text-accent-ink font-medium rounded-[4px] transition-colors";
+      } else {
+        btn.className = "quick-btn py-2 text-center font-code text-code bg-surface-container-low hover:bg-surface-container text-ink-primary rounded-[4px] transition-colors";
+      }
+    });
+  }
+
+  function setDuration(val) {
+    const slider = document.getElementById('duration-slider');
+    slider.value = val;
+    updateDuration(val);
+  }
+
+  function quickStart(mins) {
+    setDuration(mins);
+    switchTab('active-timer');
+    setTimerState('focus');
+  }
+
+  function startSession() {
+    switchTab('active-timer');
+    setTimerState('focus');
+  }
+
+  // Active Timer & State Machine Toggle
+  let isTimerPaused = false;
+  function setTimerState(state) {
+    const focusCard = document.getElementById('state-focus-card');
+    const breakCard = document.getElementById('state-break-card');
+    const btnFocus = document.getElementById('btn-state-focus');
+    const btnBreak = document.getElementById('btn-state-break');
+
+    if (state === 'focus') {
+      focusCard.classList.remove('hidden');
+      breakCard.classList.add('hidden');
+      btnFocus.className = "px-4 py-1.5 rounded-full font-label-md text-label-md transition-all bg-surface-elevation text-ink-primary shadow-sm font-medium";
+      btnBreak.className = "px-4 py-1.5 rounded-full font-label-md text-label-md transition-all text-ink-secondary hover:text-ink-primary";
+    } else {
+      focusCard.classList.add('hidden');
+      breakCard.classList.remove('hidden');
+      btnBreak.className = "px-4 py-1.5 rounded-full font-label-md text-label-md transition-all bg-surface-elevation text-ink-primary shadow-sm font-medium";
+      btnFocus.className = "px-4 py-1.5 rounded-full font-label-md text-label-md transition-all text-ink-secondary hover:text-ink-primary";
+    }
+  }
+
+  function togglePauseTimer() {
+    isTimerPaused = !isTimerPaused;
+    const txt = document.getElementById('pause-text');
+    txt.innerText = isTimerPaused ? 'Devam Ettir' : 'Duraklat';
+  }
+
+  function triggerBreakTransition() {
+    setTimerState('break');
+  }
+
+  function continueCycle() {
+    setTimerState('focus');
+  }
+
+  function finishAndClaim() {
+    switchTab('dashboard');
+  }
+
+  function earlyExit() {
+    if (confirm("Mevcut odak seansını kredilendirilmeden sonlandırmak istediğinize emin misiniz?")) {
+      switchTab('dashboard');
+    }
+  }
+
+  function copyRoomCode(code) {
+    navigator.clipboard.writeText(code).then(() => {
+      const btn = document.getElementById('copy-btn');
+      btn.innerHTML = '<span class="material-symbols-outlined text-[18px] text-success-text">check</span>';
+      setTimeout(() => {
+        btn.innerHTML = '<span class="material-symbols-outlined text-[18px]">content_copy</span>';
+      }, 1500);
+    });
+  }
+</script></main><footer class="w-full bg-canvas-base border-t border-border-subtle py-space-md mt-auto"><div class="max-w-7xl mx-auto px-margin flex flex-col sm:flex-row items-center justify-between gap-space-sm font-label-sm text-label-sm text-ink-secondary"><div class="flex items-center gap-2"><span class="inline-block w-1.5 h-1.5 rounded-full bg-secondary"></span><span class="font-code text-[11px] text-ink-secondary">Protokol Aktif • SQLite v3.45 • 42ms Senk</span></div><div><span>© 2025 KrediOdak. Arşivsel Odak Altyapısı.</span></div></div></footer></body></html>

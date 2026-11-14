@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="tr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>KrediOdak - Derin Odak ve Zaman Yönetimi</title><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "ink-primary": "#2E2E38", "ink-secondary": "#6B6B76", "surface-container-highest": "#e4e2df", "surface-container-high": "#e9e8e4", "ink-tertiary": "#9898A4", "on-background": "#1b1c1a", "on-secondary-fixed-variant": "#1f4f43", "primary-container": "#4356a7", "canvas-base": "#FAF8F5", "tertiary-fixed": "#ffe08d", "surface-dim": "#dbdad6", "success-text": "#25593A", "accent-ink": "#2F3A6B", "surface-container": "#efeeea", "background": "#fbf9f5", "error-container": "#ffdad6", "tertiary-fixed-dim": "#e5c366", "inverse-surface": "#30312e", "primary-fixed-dim": "#b8c3ff", "on-secondary": "#ffffff", "border-subtle": "#E8E4DE", "accent-hover": "#CBD5F5", "primary": "#2a3e8e", "vault-surface": "#E3F1EC", "surface-container-low": "#f5f3f0", "outline-variant": "#c5c5d3", "on-primary-container": "#cbd2ff", "on-error": "#ffffff", "secondary-container": "#b8eada", "on-secondary-container": "#3c6b5e", "vault-ink": "#1F4A40", "inverse-on-surface": "#f2f1ed", "accent-rest": "#DDE3FA", "outline": "#757682", "tertiary-container": "#c7a84e", "secondary-fixed-dim": "#9fd1c1", "error-text": "#8A2F2F", "surface-elevation": "#FFFFFF", "on-error-container": "#93000a", "vault-outline": "#9CCDBD", "accent-focus": "#6F82D6", "on-primary": "#ffffff", "on-surface": "#1b1c1a", "on-tertiary-fixed": "#241a00", "secondary": "#38675a", "on-secondary-fixed": "#002019", "surface-container-lowest": "#ffffff", "surface": "#fbf9f5", "primary-fixed": "#dde1ff", "error": "#ba1a1a", "on-surface-variant": "#454651", "warning-surface": "#FBEFD5", "on-tertiary-fixed-variant": "#584400", "on-tertiary": "#ffffff", "on-primary-fixed": "#001355", "inverse-primary": "#b8c3ff", "success-surface": "#DDF0E3", "tertiary": "#745b00", "surface-variant": "#e4e2df", "error-surface": "#F8E1E1", "surface-tint": "#4659aa", "warning-text": "#6B4A10", "secondary-fixed": "#bbeddc", "on-primary-fixed-variant": "#2c4090", "on-tertiary-container": "#4f3d00", "vault-base": "#F1F8F5", "surface-bright": "#fbf9f5" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-md": "1rem", "space-xs": "0.25rem", "margin": "1.5rem", "gutter": "1.25rem", "space-lg": "1.5rem", "space-xl": "2.25rem", "space-sm": "0.5rem" }, "fontFamily": { "headline-md": ["Inter"], "display-mobile": ["Inter"], "display": ["Inter"], "body-lg": ["Inter"], "code": ["JetBrains Mono"], "headline-lg": ["Inter"], "headline-sm": ["Inter"], "label-md": ["Inter"], "body-md": ["Inter"], "label-sm": ["Inter"] }, "fontSize": { "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "500" }], "display-mobile": ["26px", { "lineHeight": "34px", "fontWeight": "600" }], "display": ["32px", { "lineHeight": "40px", "fontWeight": "600" }], "body-lg": ["15px", { "lineHeight": "24px", "fontWeight": "400" }], "code": ["13px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-lg": ["24px", { "lineHeight": "32px", "fontWeight": "600" }], "headline-sm": ["17px", { "lineHeight": "24px", "fontWeight": "500" }], "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "body-md": ["13px", { "lineHeight": "20px", "fontWeight": "400" }], "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }] } } } };</script></head><body class="min-h-full bg-canvas-base text-ink-primary font-body-md text-body-md flex flex-col antialiased selection:bg-accent-rest selection:text-accent-ink"><header class="fixed top-0 inset-x-0 z-50 bg-canvas-base border-b border-border-subtle"><div class="h-16 max-w-7xl mx-auto px-margin flex items-center justify-between gap-gutter"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-sm"><span class="font-headline-sm text-headline-sm text-ink-primary font-semibold tracking-tight">KrediOdak</span><span class="px-1.5 py-0.5 rounded border border-border-subtle bg-surface-container-low font-code text-[11px] leading-none text-ink-secondary tracking-normal">v2.5 // FSM</span></div><nav class="hidden md:flex items-center gap-space-xs" data-active-classes="bg-accent-rest text-accent-ink font-semibold rounded-lg"><a class="px-3 py-1.5 rounded-lg text-ink-secondary hover:text-ink-primary hover:bg-surface-container-low transition-colors font-label-md text-label-md" data-path="kontrol-paneli" href="#">Kontrol Paneli</a><a class="px-3 py-1.5 rounded-lg text-ink-secondary hover:text-ink-primary hover:bg-surface-container-low transition-colors font-label-md text-label-md" data-path="kurulum" href="#">Kurulum</a><a class="px-3 py-1.5 rounded-lg text-ink-secondary hover:text-ink-primary hover:bg-surface-container-low transition-colors font-label-md text-label-md" data-path="aktif-zamanlayici" href="#">Aktif Zamanlayıcı</a><a class="px-3 py-1.5 rounded-lg text-ink-secondary hover:text-ink-primary hover:bg-surface-container-low transition-colors font-label-md text-label-md" data-path="birlikte-calisma" href="#">Birlikte Çalışma</a></nav></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm px-2.5 py-1.5 rounded-lg border border-border-subtle bg-surface-elevation"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span></span><span class="font-code text-code text-ink-primary font-medium tracking-tight">@dev_caglar</span><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="flex-1 w-full pt-16 bg-canvas-base"><div class="flex flex-col w-full">
+<div class="max-w-5xl mx-auto w-full px-margin py-space-xl flex flex-col gap-space-lg">
+<!-- Top Metadata Breadcrumb / Context Marker -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs font-code text-code text-ink-secondary">
+<span class="inline-flex items-center justify-center w-5 h-5 rounded-[4px] bg-surface-container-high text-ink-primary text-[11px] font-medium">04</span>
+<span class="text-ink-tertiary">/</span>
+<span class="uppercase tracking-wider text-[11px] font-medium">Birlikte Çalışma Odası</span>
+<span class="text-ink-tertiary">/</span>
+<span class="text-ink-primary font-medium">Dakika Yarışı</span>
+</div>
+<div class="flex items-center gap-space-xs font-code text-[11px] text-ink-secondary">
+<span class="inline-block w-2 h-2 rounded-full bg-secondary"></span>
+<span>WebSocket P2P • 14ms Gecikme</span>
+</div>
+</div>
+<!-- Active Room Header Card (Quiet Paper 8px Radius) -->
+<div class="bg-surface-elevation rounded-lg p-space-lg flex flex-col md:flex-row md:items-center md:justify-between gap-space-lg">
+<div class="flex flex-col gap-space-xs">
+<div class="flex flex-wrap items-center gap-space-sm">
+<h1 class="font-headline-lg text-headline-lg text-ink-primary font-semibold tracking-tight">#dev-deep-work</h1>
+<div class="flex items-center gap-1.5 px-2 py-1 rounded-[4px] bg-surface-container-low">
+<span class="font-code text-code text-ink-secondary">Kod:</span>
+<span class="font-code text-code text-ink-primary font-semibold" id="roomCodeVal">X7Y9Z</span>
+<button class="ml-1 text-ink-secondary hover:text-ink-primary transition-colors flex items-center justify-center" id="copyCodeBtn" onclick="copyRoomCode()" title="Kodu Kopyala">
+<span class="material-symbols-outlined text-[16px]" id="copyIcon">content_copy</span>
+</button>
+</div>
+<span class="px-2 py-0.5 rounded-[4px] bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-medium">Canlı Protokol</span>
+</div>
+<p class="font-body-md text-body-md text-ink-secondary flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary">group</span>
+<span>8 Katılımcı Senkronize</span>
+<span class="text-ink-tertiary">•</span>
+<span class="text-ink-primary font-medium">Sessiz Çalışma Kuralı Aktif</span>
+</p>
+</div>
+<!-- Quick Room Switcher -->
+<div class="flex items-center gap-2">
+<div class="relative">
+<input class="h-9 w-36 sm:w-44 px-3 bg-surface-container-lowest text-ink-primary placeholder-ink-tertiary font-code text-code rounded-[6px] focus:outline-none focus:bg-surface-container-low transition-colors" id="targetRoomInput" maxlength="8" placeholder="Oda Kodu Gir" type="text"/>
+</div>
+<button class="h-9 px-4 rounded-[6px] bg-accent-rest hover:bg-accent-hover active:bg-accent-focus/30 text-accent-ink font-label-md text-label-md font-medium transition-colors flex items-center gap-1.5 whitespace-nowrap" onclick="handleJoinRoom()">
+<span class="material-symbols-outlined text-[16px]">meeting_room</span>
+<span>Odaya Katıl</span>
+</button>
+</div>
+</div>
+<!-- Main Workspace Grid: Minimalist Leaderboard & Protocol Stats -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Minimalist Leaderboard (Dakika Yarışı) - 8 Cols -->
+<div class="lg:col-span-8 flex flex-col gap-space-sm">
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-ink-secondary text-[20px]">timer</span>
+<h2 class="font-headline-sm text-headline-sm text-ink-primary font-semibold">Günün Kredili Dakika Sıralaması</h2>
+</div>
+<span class="font-code text-[11px] text-ink-secondary">Oturum: 08:00 - 20:00</span>
+</div>
+<div class="bg-surface-elevation rounded-lg overflow-hidden">
+<!-- Column Headers -->
+<div class="grid grid-cols-12 px-space-md py-space-sm bg-surface-container-low text-ink-secondary font-label-sm text-label-sm uppercase tracking-wider">
+<div class="col-span-1 text-center font-code">Sıra</div>
+<div class="col-span-6 pl-2">Odaklayıcı &amp; Proje</div>
+<div class="col-span-3 text-center">Durum Rozeti</div>
+<div class="col-span-2 text-right pr-1">Kredili Süre</div>
+</div>
+<!-- Participant Rows -->
+<div class="flex flex-col bg-surface-elevation">
+<!-- Rank #1: Mert Yılmaz -->
+<div class="grid grid-cols-12 items-center px-space-md py-3.5 hover:bg-surface-container-low/60 transition-colors">
+<div class="col-span-1 flex justify-center">
+<span class="w-6 h-6 rounded-[4px] bg-tertiary-fixed text-on-tertiary-fixed font-code text-[12px] font-semibold flex items-center justify-center">1</span>
+</div>
+<div class="col-span-6 pl-2 flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 truncate">
+<span class="font-body-md text-body-md text-ink-primary font-medium truncate">Mert Yılmaz</span>
+<span class="font-code text-[11px] text-ink-secondary">@mert</span>
+</div>
+<span class="font-body-md text-[12px] text-ink-secondary truncate">Rust Parser</span>
+</div>
+<div class="col-span-3 flex justify-center">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-[4px] bg-vault-surface text-vault-ink font-label-sm text-label-sm font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Odakta</span>
+</span>
+</div>
+<div class="col-span-2 text-right pr-1 flex flex-col">
+<span class="font-code text-headline-sm text-headline-sm text-ink-primary font-semibold">310<span class="font-label-sm text-label-sm text-ink-secondary font-normal ml-1">dk</span></span>
+<span class="font-code text-[10px] text-ink-tertiary">12.4 Kredi</span>
+</div>
+</div>
+<!-- Rank #2: Elif Demir -->
+<div class="grid grid-cols-12 items-center px-space-md py-3.5 bg-surface-container-lowest hover:bg-surface-container-low/60 transition-colors">
+<div class="col-span-1 flex justify-center">
+<span class="w-6 h-6 rounded-[4px] bg-surface-container-high text-ink-primary font-code text-[12px] font-medium flex items-center justify-center">2</span>
+</div>
+<div class="col-span-6 pl-2 flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 truncate">
+<span class="font-body-md text-body-md text-ink-primary font-medium truncate">Elif Demir</span>
+<span class="font-code text-[11px] text-ink-secondary">@elif_codes</span>
+</div>
+<span class="font-body-md text-[12px] text-ink-secondary truncate">Veritabanı İndeksleme</span>
+</div>
+<div class="col-span-3 flex justify-center">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-[4px] bg-vault-surface text-vault-ink font-label-sm text-label-sm font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Odakta</span>
+</span>
+</div>
+<div class="col-span-2 text-right pr-1 flex flex-col">
+<span class="font-code text-headline-sm text-headline-sm text-ink-primary font-semibold">280<span class="font-label-sm text-label-sm text-ink-secondary font-normal ml-1">dk</span></span>
+<span class="font-code text-[10px] text-ink-tertiary">11.2 Kredi</span>
+</div>
+</div>
+<!-- Rank #3: CURRENT USER (Çağlar) -> Left Accent Line #6F82D6 -->
+<div class="relative grid grid-cols-12 items-center px-space-md py-3.5 bg-accent-rest/40 hover:bg-accent-rest/60 transition-colors">
+<!-- Visual highlight indicator bar -->
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-accent-focus"></div>
+<div class="col-span-1 flex justify-center">
+<span class="w-6 h-6 rounded-[4px] bg-surface-container-high text-accent-ink font-code text-[12px] font-semibold flex items-center justify-center">3</span>
+</div>
+<div class="col-span-6 pl-2 flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 truncate">
+<span class="font-body-md text-body-md text-accent-ink font-semibold truncate">Çağlar (Sen)</span>
+<span class="font-code text-[11px] text-accent-ink/80">@dev_caglar</span>
+<span class="px-1.5 py-0.2 rounded-[4px] bg-accent-rest text-accent-ink font-code text-[10px] font-medium uppercase tracking-tight">Oturum</span>
+</div>
+<span class="font-body-md text-[12px] text-ink-secondary truncate">Protokol &amp; UI Tasarımı</span>
+</div>
+<div class="col-span-3 flex justify-center">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-[4px] bg-warning-surface text-warning-text font-label-sm text-label-sm font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+<span>Mola / Karar</span>
+</span>
+</div>
+<div class="col-span-2 text-right pr-1 flex flex-col">
+<span class="font-code text-headline-sm text-headline-sm text-accent-ink font-semibold">240<span class="font-label-sm text-label-sm text-ink-secondary font-normal ml-1">dk</span></span>
+<span class="font-code text-[10px] text-accent-ink/70">9.6 Kredi</span>
+</div>
+</div>
+<!-- Rank #4: Deniz Kaya -->
+<div class="grid grid-cols-12 items-center px-space-md py-3.5 hover:bg-surface-container-low/60 transition-colors">
+<div class="col-span-1 flex justify-center">
+<span class="w-6 h-6 rounded-[4px] bg-surface-container-high text-ink-secondary font-code text-[12px] font-medium flex items-center justify-center">4</span>
+</div>
+<div class="col-span-6 pl-2 flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 truncate">
+<span class="font-body-md text-body-md text-ink-primary font-medium truncate">Deniz Kaya</span>
+<span class="font-code text-[11px] text-ink-secondary">@denizk</span>
+</div>
+<span class="font-body-md text-[12px] text-ink-secondary truncate">Makale Araştırması</span>
+</div>
+<div class="col-span-3 flex justify-center">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-[4px] bg-warning-surface text-warning-text font-label-sm text-label-sm font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+<span>Mola / Karar</span>
+</span>
+</div>
+<div class="col-span-2 text-right pr-1 flex flex-col">
+<span class="font-code text-headline-sm text-headline-sm text-ink-primary font-semibold">195<span class="font-label-sm text-label-sm text-ink-secondary font-normal ml-1">dk</span></span>
+<span class="font-code text-[10px] text-ink-tertiary">7.8 Kredi</span>
+</div>
+</div>
+<!-- Rank #5: Kerem Ak -->
+<div class="grid grid-cols-12 items-center px-space-md py-3.5 bg-surface-container-lowest hover:bg-surface-container-low/60 transition-colors">
+<div class="col-span-1 flex justify-center">
+<span class="w-6 h-6 rounded-[4px] bg-surface-container-high text-ink-secondary font-code text-[12px] font-medium flex items-center justify-center">5</span>
+</div>
+<div class="col-span-6 pl-2 flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 truncate">
+<span class="font-body-md text-body-md text-ink-primary font-medium truncate">Kerem Ak</span>
+<span class="font-code text-[11px] text-ink-secondary">@kerem_api</span>
+</div>
+<span class="font-body-md text-[12px] text-ink-secondary truncate">OAuth 2.1 Entegrasyonu</span>
+</div>
+<div class="col-span-3 flex justify-center">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-[4px] bg-vault-surface text-vault-ink font-label-sm text-label-sm font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Odakta</span>
+</span>
+</div>
+<div class="col-span-2 text-right pr-1 flex flex-col">
+<span class="font-code text-headline-sm text-headline-sm text-ink-primary font-semibold">160<span class="font-label-sm text-label-sm text-ink-secondary font-normal ml-1">dk</span></span>
+<span class="font-code text-[10px] text-ink-tertiary">6.4 Kredi</span>
+</div>
+</div>
+<!-- Rank #6: Zeynep Çelik -->
+<div class="grid grid-cols-12 items-center px-space-md py-3.5 hover:bg-surface-container-low/60 transition-colors">
+<div class="col-span-1 flex justify-center">
+<span class="w-6 h-6 rounded-[4px] bg-surface-container-high text-ink-secondary font-code text-[12px] font-medium flex items-center justify-center">6</span>
+</div>
+<div class="col-span-6 pl-2 flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 truncate">
+<span class="font-body-md text-body-md text-ink-primary font-medium truncate">Zeynep Çelik</span>
+<span class="font-code text-[11px] text-ink-secondary">@zeynep_c</span>
+</div>
+<span class="font-body-md text-[12px] text-ink-secondary truncate">Modül Testleri</span>
+</div>
+<div class="col-span-3 flex justify-center">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-[4px] bg-surface-container-high text-ink-secondary font-label-sm text-label-sm font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-ink-tertiary"></span>
+<span>Boşta</span>
+</span>
+</div>
+<div class="col-span-2 text-right pr-1 flex flex-col">
+<span class="font-code text-headline-sm text-headline-sm text-ink-primary font-semibold">120<span class="font-label-sm text-label-sm text-ink-secondary font-normal ml-1">dk</span></span>
+<span class="font-code text-[10px] text-ink-tertiary">4.8 Kredi</span>
+</div>
+</div>
+</div>
+<!-- Table Footer Subtle Counter -->
+<div class="px-space-md py-space-xs bg-surface-container-low/50 flex items-center justify-between font-label-sm text-label-sm text-ink-secondary">
+<span>Sıralama her 60 saniyede bir otonom doğrulanır.</span>
+<span class="font-code text-[11px]">Toplam 6 / 8 Aktif</span>
+</div>
+</div>
+<!-- Quick Status Signal Switcher for Current User -->
+<div class="bg-surface-elevation rounded-lg p-space-md flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-ink-secondary text-[18px]">radio_button_checked</span>
+<span class="font-label-md text-label-md text-ink-primary font-medium">Sinyal Durumunu Güncelle:</span>
+</div>
+<div class="flex items-center gap-1.5">
+<button class="px-3 py-1 rounded-[4px] bg-surface-container-low text-ink-secondary hover:text-ink-primary font-label-sm text-label-sm transition-colors flex items-center gap-1.5" id="statusBtnOdakta" onclick="setStatus('odakta')">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>Odakta</span>
+</button>
+<button class="px-3 py-1 rounded-[4px] bg-warning-surface text-warning-text font-label-sm text-label-sm font-medium transition-colors flex items-center gap-1.5" id="statusBtnMola" onclick="setStatus('mola')">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span>Mola / Karar</span>
+</button>
+<button class="px-3 py-1 rounded-[4px] bg-surface-container-low text-ink-secondary hover:text-ink-primary font-label-sm text-label-sm transition-colors flex items-center gap-1.5" id="statusBtnBosta" onclick="setStatus('bosta')">
+<span class="w-2 h-2 rounded-full bg-ink-tertiary"></span>
+<span>Boşta</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Room Protocol & Stats Card (Right Column) - 4 Cols -->
+<div class="lg:col-span-4 flex flex-col gap-space-md">
+<!-- Metrics Panel -->
+<div class="bg-surface-elevation rounded-lg p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-ink-secondary font-medium uppercase tracking-wider">Oda Performansı</span>
+<span class="material-symbols-outlined text-ink-tertiary text-[18px]">insights</span>
+</div>
+<!-- Large Stat Block -->
+<div class="flex flex-col gap-1 py-1">
+<span class="font-label-sm text-label-sm text-ink-secondary">Toplam Üretim</span>
+<div class="flex items-baseline gap-2">
+<span class="font-code text-display text-display text-ink-primary font-semibold tracking-tight">1,305</span>
+<span class="font-body-md text-body-md text-ink-secondary font-medium">Dakika</span>
+</div>
+<span class="font-code text-[11px] text-ink-secondary">≈ 52.2 Kredi Blok Hacmi</span>
+</div>
+<!-- Linear Meter of Progress -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-ink-secondary">Oda Hedefi (1,500 Dk)</span>
+<span class="font-code font-medium text-ink-primary">%87</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 87%;"></div>
+</div>
+</div>
+<!-- Secondary Metrics Grid -->
+<div class="grid grid-cols-2 gap-space-sm pt-2">
+<div class="p-space-sm rounded-[6px] bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-sm text-[11px] text-ink-secondary">Ortalama Odak</span>
+<span class="font-code text-headline-sm text-headline-sm text-ink-primary font-semibold">217.5<span class="text-[12px] font-normal ml-0.5">dk</span></span>
+<span class="font-body-md text-[11px] text-ink-tertiary">Kullanıcı başı</span>
+</div>
+<div class="p-space-sm rounded-[6px] bg-accent-rest/50 flex flex-col gap-1">
+<span class="font-label-sm text-[11px] text-accent-ink font-medium">Senin Katkın</span>
+<span class="font-code text-headline-sm text-headline-sm text-accent-ink font-semibold">240<span class="text-[12px] font-normal ml-0.5">dk</span></span>
+<span class="font-code text-[11px] text-accent-ink/80 font-medium">%18.4 Pay</span>
+</div>
+</div>
+<!-- Visual Distribution SVG Chart -->
+<div class="flex flex-col gap-2 pt-2">
+<div class="flex items-center justify-between font-label-sm text-[11px] text-ink-secondary">
+<span>Dakika Paylaşım Dağılımı</span>
+<span class="font-code">N=6</span>
+</div>
+<svg class="w-full h-7 rounded-[4px] overflow-hidden" fill="none" preserveaspectratio="none" viewbox="0 0 320 28">
+<!-- Mert 310dk (23.7%) -->
+<rect fill="#2a3e8e" height="28" width="76" x="0" y="0"></rect>
+<!-- Elif 280dk (21.4%) -->
+<rect fill="#4356a7" height="28" width="68" x="77" y="0"></rect>
+<!-- Çağlar (Sen) 240dk (18.4%) -->
+<rect fill="#6F82D6" height="28" width="59" x="146" y="0"></rect>
+<!-- Deniz 195dk (15%) -->
+<rect fill="#9898A4" height="28" width="48" x="206" y="0"></rect>
+<!-- Kerem 160dk (12.2%) -->
+<rect fill="#c5c5d3" height="28" width="39" x="255" y="0"></rect>
+<!-- Zeynep 120dk (9.2%) -->
+<rect fill="#e4e2df" height="28" width="25" x="295" y="0"></rect>
+</svg>
+<div class="flex items-center justify-between font-code text-[10px] text-ink-secondary px-0.5">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-[2px] bg-primary"></span>Mert</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-[2px] bg-primary-container"></span>Elif</span>
+<span class="flex items-center gap-1 font-semibold text-accent-ink"><span class="w-2 h-2 rounded-[2px] bg-accent-focus"></span>Sen</span>
+<span class="flex items-center gap-1 text-ink-tertiary">Diğerleri</span>
+</div>
+</div>
+</div>
+<!-- Archival Protocol Reminder Card -->
+<div class="bg-surface-elevation rounded-lg p-space-lg flex flex-col gap-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">verified_user</span>
+<h3 class="font-headline-sm text-[15px] leading-5 text-ink-primary font-semibold">Sessiz Odak Sözleşmesi</h3>
+</div>
+<p class="font-body-md text-body-md text-ink-secondary leading-relaxed">
+            Mikrofonsuz, kamerasız sessiz odak. Yalnızca durum sinyalleri ve tamamlanan kredi blokları senkronize edilir.
+          </p>
+<div class="mt-1 pt-space-sm flex flex-col gap-2 text-ink-secondary font-label-sm text-[12px]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[15px] text-secondary">check</span>
+<span>1 Blok = Kesintisiz 25 Dakika</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[15px] text-secondary">check</span>
+<span>Durum gecikmesi &lt; 50ms</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[15px] text-secondary">check</span>
+<span>Sıfır dikkat dağıtıcı anlık sohbet</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function copyRoomCode() {
+    const code = document.getElementById('roomCodeVal').innerText;
+    navigator.clipboard.writeText(code).then(() => {
+      const icon = document.getElementById('copyIcon');
+      icon.innerText = 'done';
+      setTimeout(() => {
+        icon.innerText = 'content_copy';
+      }, 1800);
+    });
+  }
+
+  function handleJoinRoom() {
+    const input = document.getElementById('targetRoomInput');
+    const val = input.value.trim();
+    if (!val) {
+      input.focus();
+      return;
+    }
+    const sanitized = val.startsWith('#') ? val : '#' + val.toLowerCase();
+    const btn = event.currentTarget;
+    const originalText = btn.innerHTML;
+    btn.innerHTML = '<span class="material-symbols-outlined text-[16px] animate-spin">refresh</span><span>Bağlanıyor...</span>';
+    setTimeout(() => {
+      btn.innerHTML = originalText;
+      alert(sanitized + ' odasına yönlendiriliyorsunuz.');
+      input.value = '';
+    }, 450);
+  }
+
+  function setStatus(type) {
+    const btnOdakta = document.getElementById('statusBtnOdakta');
+    const btnMola = document.getElementById('statusBtnMola');
+    const btnBosta = document.getElementById('statusBtnBosta');
+
+    const reset = (btn) => {
+      btn.className = 'px-3 py-1 rounded-[4px] bg-surface-container-low text-ink-secondary hover:text-ink-primary font-label-sm text-label-sm transition-colors flex items-center gap-1.5';
+    };
+
+    reset(btnOdakta);
+    reset(btnMola);
+    reset(btnBosta);
+
+    if (type === 'odakta') {
+      btnOdakta.className = 'px-3 py-1 rounded-[4px] bg-vault-surface text-vault-ink font-label-sm text-label-sm font-medium transition-colors flex items-center gap-1.5';
+    } else if (type === 'mola') {
+      btnMola.className = 'px-3 py-1 rounded-[4px] bg-warning-surface text-warning-text font-label-sm text-label-sm font-medium transition-colors flex items-center gap-1.5';
+    } else if (type === 'bosta') {
+      btnBosta.className = 'px-3 py-1 rounded-[4px] bg-surface-container-high text-ink-primary font-label-sm text-label-sm font-medium transition-colors flex items-center gap-1.5';
+    }
+  }
+</script></main><footer class="w-full bg-canvas-base border-t border-border-subtle py-space-md mt-auto"><div class="max-w-7xl mx-auto px-margin flex flex-col sm:flex-row items-center justify-between gap-space-sm font-label-sm text-label-sm text-ink-secondary"><div class="flex items-center gap-2"><span class="inline-block w-1.5 h-1.5 rounded-full bg-secondary"></span><span class="font-code text-[11px] text-ink-secondary">Protokol Aktif • SQLite v3.45 • 42ms Senk</span></div><div><span>© 2025 KrediOdak. Arşivsel Odak Altyapısı.</span></div></div></footer></body></html>

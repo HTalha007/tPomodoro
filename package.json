@@ -1,0 +1,13 @@
+{
+  "name": "tpomodoro-root",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@9.15.4",
+  "scripts": {
+    "dev:api": "corepack pnpm --filter @tpomodoro/api start:dev",
+    "dev:web": "corepack pnpm --filter @tpomodoro/web dev",
+    "build": "corepack pnpm -r run build",
+    "test": "corepack pnpm -r run test",
+    "test:domain": "corepack pnpm --filter @tpomodoro/domain test"
+  }
+}
